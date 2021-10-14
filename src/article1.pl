@@ -68,6 +68,25 @@ memberOfHouse(X) :-
 elected(X) :-
     eligibleToHouse(X).
 
+
+% Section 4
+%--------------------------------------------------------------------------
+holdElectionEvents(X,legislature):-
+    write('X represents the events of the election which are to be decided by the congress'),
+    member(X,[times,places,manner]).
+monday(7,1,2019). %from the test cases 
+monday(2,12,2019).%from the test cases 
+congressMeetingDate(X,12,Y):-
+    write('The Congress shall assemble at least once in every Year, and such Meeting shall be on the first Monday in December'),
+    monday(X,12,Y).
+
+% Section 5
+%--------------------------------------------------------------------------
+houseShall(X):-
+    member(X,['be the Judge of the Elections',
+    'Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide','determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member',
+    'keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy']).
+
  
 % Section 8
 %--------------------------------------------------------------------------
@@ -93,3 +112,28 @@ power(congress, 'To provide for calling forth the Militia to execute the Laws of
 power(congress, 'To provide for organizing, arming, and disciplining, the Militia, and for governing such Part of them as may be employed in the Service of the United States, reserving to the States respectively, the Appointment of the Officers, and the Authority of training the Militia according to the discipline prescribed by Congress').
 power(congress, 'To exercise exclusive Legislation in all Cases whatsoever, over such District (not exceeding ten Miles square) as may, by Cession of particular States, and the Acceptance of Congress, become the Seat of the Government of the United States, and to exercise like Authority over all Places purchased by the Consent of the Legislature of the State in which the Same shall be, for the Erection of Forts, Magazines, Arsenals, dock-Yards and other needful Building').
 power(congress, 'To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States, or in any Department or Officer thereof').
+
+% Section 10
+%--------------------------------------------------------------------------
+% predicate to define the boundness of the States
+
+noStateShall(enter,'Treaty').
+noStateShall(enter,'Alliance').
+noStateShall(enter,'Confedration').
+noStateShall(enter,'Grant Letters Of Marque and Resprisal').
+noStateShall(enter,'coin Money').
+noStateShall(enter,'emit Bills of Credit').
+noStateShall(enter,'make any Thing but gold and silver Coin a Tender in Payment of Debts').
+noStateShall(enter,'pass any Bill of Attainder').
+noStateShall(enter,'ex post facto Law').
+noStateShall(enter,'Law impairing the Obligation of Contracts').
+noStateShall(enter,'grant any Title of Nobility').
+
+
+noStateShall(withoutConsentOfCongress,'lay any Imposts or Duties on Imports or Exports, except what may be absolutely necessary for executing it’s inspection Laws: and the net Produce of all Duties and Imposts, laid by any State on Imports or Exports, shall be for the Use of the Treasury of the United States; and all such Laws shall be subject to the Revision and Controul of the Congress').
+noStateShall(withoutConsentOfCongress,'lay any Duty of Tonnage').
+noStateShall(withoutConsentOfCongress,'keep Troops, or Ships of War in time of Peace').
+noStateShall(withoutConsentOfCongress,'enter into any Agreement or Compact with another State').
+noStateShall(withoutConsentOfCongress,'enter into any Agreement or Compact with a foreign Power').
+noStateShall(withoutConsentOfCongress,'engage in War, unless actually invaded or  in such imminent Danger as will not admit of delay').
+
