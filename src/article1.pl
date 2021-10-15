@@ -14,7 +14,7 @@ legislativePower(X):-
 partOfCongress(senate).
 partOfCongress('house of representatives').
 
-% Section 2
+% 
 %--------------------------------------------------------------------------
 
 % Predicate to check eligibility to the House of Representatives
@@ -87,7 +87,24 @@ houseShall(X):-
     'Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide','determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member',
     'keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy']).
 
- 
+% Section 6 
+%--------------------------------------------------------------------------
+isExempted(X) :-
+    write('they shall be privileged from Arrest during their Attendance at the Session of their respective Houses, and in going to and return- ing from the same; and for any Speech or Debate in either House, they shall not be questioned in any other Place') ,
+    isSenator(X),
+    isRepresentative(X),
+    noTreason(X),
+    noFeloncyAndBreachOfPeace(X) .
+
+isSenator(ron).
+isRepresentative(ron).
+noTreason(ron).
+noFeloncyAndBreachOfPeace(ron).
+
+
+noSenatorOrRepresentative(shall , 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
+noSenatorOrRepresentative(shall , 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
+noSenatorOrRepresentative(shall,'not be a Member of either House during his Continuance in Office').
 % Section 8
 %--------------------------------------------------------------------------
 
@@ -112,6 +129,23 @@ power(congress, 'To provide for calling forth the Militia to execute the Laws of
 power(congress, 'To provide for organizing, arming, and disciplining, the Militia, and for governing such Part of them as may be employed in the Service of the United States, reserving to the States respectively, the Appointment of the Officers, and the Authority of training the Militia according to the discipline prescribed by Congress').
 power(congress, 'To exercise exclusive Legislation in all Cases whatsoever, over such District (not exceeding ten Miles square) as may, by Cession of particular States, and the Acceptance of Congress, become the Seat of the Government of the United States, and to exercise like Authority over all Places purchased by the Consent of the Legislature of the State in which the Same shall be, for the Erection of Forts, Magazines, Arsenals, dock-Yards and other needful Building').
 power(congress, 'To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States, or in any Department or Officer thereof').
+
+
+% Section 9
+%--------------------------------------------------------------------------
+
+
+
+
+powerForbidden(congress,'The Privilege of the Writ of Habeas Corpus shall not be suspended, unless when in Cases of Rebellion or Invasion the public Safety may require it').
+powerForbidden(congress,'No Bill of Attainder or ex post facto Law shall be passed').
+powerForbidden(congress,'No Tax or Duty shall be laid on Articles exported from any State').
+powerForbidden(congress,'No Preference shall be given by any Regulation of Com- merce or Revenue to the Ports of one State over those of another: nor shall Vessels bound to, or from, one State, be obliged to enter, clear, or pay Duties in another').
+powerForbidden(congress,'No Title of Nobility shall be granted by the United States').
+
+
+
+
 
 % Section 10
 %--------------------------------------------------------------------------
