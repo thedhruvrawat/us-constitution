@@ -13,4 +13,4 @@ power(congress,'Dispose of and make all needful rules and regulations respecting
 
 gauranteeRepublicanFormOfGovernement(X):-stateOfUS(X).
 protectAgainstInvasion(X):-stateOfUS(X).
-protectAgainstDomesticViolence(X):-OnDemandOfLegislature(X),stateOfUS(X).
+protectAgainstDomesticViolence(X):- OnDemandOfLegislature(X),stateOfUS(X).
