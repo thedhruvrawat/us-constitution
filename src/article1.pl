@@ -69,6 +69,33 @@ elected(X) :-
     eligibleToHouse(X).
 
 
+% Section 3
+%--------------------------------------------------------------------------
+% Number of senators from each state
+numOfSenators(X, Y) :- Y=2.
+
+classesOfSenators :- 
+    write('Senators shall be divided as equally as may be into three Classes\n'),
+    write('The Seats of the Senators of the first Class shall be vacated at the Expiration of the second Year, of the second Class at the Expiration of the fourth Year, and of the third Class at the Expiration of the sixth Year, so that one third may be chosen every second Year.').
+
+eligibleToSenate(X):-
+    write('Checking eligibility through Article 1 Section 2......'),
+    ageMoreThanThirty(X),
+    isUScitizen(X),
+    livingMoreThanNine(X).
+
+presidentOfSenate(X):-
+    isVP(X);
+    isProTemporePrez(X).
+
+impeachmentTrialPower(senate).
+
+impeachPresidentPower(X):-
+    chiefJustice(X).
+
+impeachmentJudgement :-
+    write('Judgment in Cases of Impeachment shall not extend further than to removal from Office, and disqualification to hold and enjoy any Office of honor, Trust or Profit under the United States: but the Party convicted shall nevertheless be liable and subject to Indictment, Trial, Judgment and Punishment, according to Law.'),
+
 % Section 4
 %--------------------------------------------------------------------------
 holdElectionEvents(X,legislature):-
@@ -87,6 +114,7 @@ houseShall(X):-
     'Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide','determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member',
     'keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy']).
 
+<<<<<<< HEAD
 % Section 6 
 %--------------------------------------------------------------------------
 isExempted(X) :-
@@ -105,6 +133,29 @@ noFeloncyAndBreachOfPeace(ron).
 noSenatorOrRepresentative(shall , 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
 noSenatorOrRepresentative(shall , 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
 noSenatorOrRepresentative(shall,'not be a Member of either House during his Continuance in Office').
+=======
+
+
+
+
+
+% Section 7
+%--------------------------------------------------------------------------
+
+isALaw(Bill) :-
+    passedByHoR(Bill),
+    passedBySenate(Bill),
+    signedByPrez(Bill).
+
+isALaw(Bill):-
+    passedByHoRByTwoThirds(Bill),
+    passedBySenateByTwoThirds(Bill).
+
+isRevenueBill(Bill) :- 
+    origin(Bill, 'House of Representatives').
+
+
+>>>>>>> 343482ee8cd89b87abc53f367265fa216144bfe2
 % Section 8
 %--------------------------------------------------------------------------
 
