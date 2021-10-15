@@ -14,7 +14,7 @@ legislativePower(X):-
 partOfCongress(senate).
 partOfCongress('house of representatives').
 
-% 
+% Section 2
 %--------------------------------------------------------------------------
 
 % Predicate to check eligibility to the House of Representatives
