@@ -36,7 +36,7 @@ goodBehaviour(hermione).
 
 extendPower(X):-case(X).
 
-case('L&E').  %law and equality.
+case('L&E (Except in case when a citizen of one state is prosecuted by other State of United States or of a foreign state.').  %law and equality.The line in brackets was added by the 11th amendemnt
 case('AP&C'). %Ambassadors,Public Ministers and Consuls.
 case('A&MJ'). %Admiralty and Marital Jurisdiction.
 case('D&C').  %Disputes, Conflicts and Controversies.

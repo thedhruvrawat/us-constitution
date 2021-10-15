@@ -7,7 +7,42 @@ term(president,4).
 term(vice_president,4).
 
 % Paragraph 2
-%numOfElectors()
+% numOfRepresentatives('New Hampshire', 3).
+% numOfRepresentatives('Massachusetts', 8).
+% numOfRepresentatives('Rhose Island and Providence Plantations', 1).
+% numOfRepresentatives('Connecticut', 5).
+% numOfRepresentatives('New York', 6).
+% numOfRepresentatives('New Jersey', 4).
+% numOfRepresentatives('Pennsylvania', 8).
+% numOfRepresentatives('Delaware', 1).
+% numOfRepresentatives('Maryland', 6).
+% numOfRepresentatives('Virginia', 10).
+% numOfRepresentatives('North Carolina', 5).
+% numOfRepresentatives('South Carolina', 5).
+% numOfRepresentatives('Georgia', 3).
+
+% listOfReps(L1,ListOfReps):-
+%     numOfRepresentatives(X,Y),
+%     append(L1, [Y], L2),
+%     listOfReps(L2,ListOfReps).
+% makeListOfReps(ListOfReps):-
+%     listOfReps([],ListOfReps).
+% findSumOfReps([],0,0).
+% findSumOfReps([H|T],X,Y):-
+%     findSumOfReps(T,X1,Y1),
+%     X is X1+1,
+%     Y is Y1 + H.
+
+sumOfReps(X):-
+    X is 3+8+1+5+6+4+8+1+6+10+5+5+3.
+numOfStates(Y):-
+    Y is 13.
+numOfElectors(Z):-
+    % makeListOfReps(ListOfReps),
+    % findSumOfReps(ListOfReps,NumOfStates,SumOfReps),
+    sumOfReps(X),
+    numOfStates(Y),
+    Z is Y*2+X.
 
 % Paragraph 3 superseded by the 12th Amendment
 
