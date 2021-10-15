@@ -114,7 +114,6 @@ houseShall(X):-
     'Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide','determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member',
     'keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy']).
 
-<<<<<<< HEAD
 % Section 6 
 %--------------------------------------------------------------------------
 isExempted(X) :-
@@ -133,7 +132,6 @@ noFeloncyAndBreachOfPeace(ron).
 noSenatorOrRepresentative(shall , 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
 noSenatorOrRepresentative(shall , 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
 noSenatorOrRepresentative(shall,'not be a Member of either House during his Continuance in Office').
-=======
 
 
 
@@ -155,7 +153,6 @@ isRevenueBill(Bill) :-
     origin(Bill, 'House of Representatives').
 
 
->>>>>>> 343482ee8cd89b87abc53f367265fa216144bfe2
 % Section 8
 %--------------------------------------------------------------------------
 
