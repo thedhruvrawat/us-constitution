@@ -97,8 +97,8 @@ holdElectionEvents(X,legislature):-
     write('X represents the events of the election which are to be decided by the congress'),
     member(X,[times,places,manner]).
 
-monday(D,M,Y):- day_of_the_week(date(D,M,Y),1).
-congressMeetingDate(X,12,Y):-
+monday(D,M,Y):- day_of_the_week(date(Y,M,D),1).
+congressMeetingDate(D,M,Y):-
     write('The Congress shall assemble at least once in every Year, and such Meeting shall be on the first Monday in December'),
     monday(D,M,Y).
 
