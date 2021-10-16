@@ -104,7 +104,7 @@ congressMeetingDate(X,12,Y):-
 
 % Section 5
 %--------------------------------------------------------------------------
-houseShall(X):-
+responsibilityOfHouse(X):-
     member(X,['be the Judge of the Elections',
     'Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide','determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member',
     'keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy']).
@@ -123,10 +123,10 @@ isRepresentative(ron).
 noTreason(ron).
 noFeloncyAndBreachOfPeace(ron).
 
-
-noSenatorOrRepresentative(shall , 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
-noSenatorOrRepresentative(shall , 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
-noSenatorOrRepresentative(shall,'not be a Member of either House during his Continuance in Office').
+% the limitations to the power of the senator has been described in the following lines . 
+powersProscribed(senator , 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
+powersProscribed(senator , 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
+powersProscribed(senator , 'not be a Member of either House during his Continuance in Office').
 
 
 
@@ -257,6 +257,12 @@ power(congress, make(laws(for(executionOfAllPowers(vestedByConstitution(in(anyDe
 % Section 9
 %--------------------------------------------------------------------------
 
+% predicate defining the Migration of people .
+
+
+
+% predicate defining the powers which are forbidden to the congress by the US Constitution .
+
 powerForbidden(congress,'The Privilege of the Writ of Habeas Corpus shall not be suspended, unless when in Cases of Rebellion or Invasion the public Safety may require it').
 powerForbidden(congress,'No Bill of Attainder or ex post facto Law shall be passed').
 powerForbidden(congress,'No Tax or Duty shall be laid on Articles exported from any State').
@@ -271,25 +277,28 @@ powerForbidden(congress,'No Title of Nobility shall be granted by the United Sta
 %--------------------------------------------------------------------------
 % predicate to define the boundness of the States
 
-noStateShall(enter,'Treaty').
-noStateShall(enter,'Alliance').
-noStateShall(enter,'Confedration').
-noStateShall(enter,'Grant Letters Of Marque and Resprisal').
-noStateShall(enter,'coin Money').
-noStateShall(enter,'emit Bills of Credit').
-noStateShall(enter,'make any Thing but gold and silver Coin a Tender in Payment of Debts').
-noStateShall(enter,'pass any Bill of Attainder').
-noStateShall(enter,'ex post facto Law').
-noStateShall(enter,'Law impairing the Obligation of Contracts').
-noStateShall(enter,'grant any Title of Nobility').
+unauthorized(state, enter('Treaty')).
+unauthorized(state, enter('Alliance')).
+unauthorized(state, enter('Confedration')).
+unauthorized(state, enter('Grant Letters Of Marque and Resprisal')).
+unauthorized(state, enter('coin Money')).
+unauthorized(state, enter('emit Bills of Credit')).
+unauthorized(state, enter('make any Thing but gold and silver Coin a Tender in Payment of Debts')).
+unauthorized(state, enter('pass any Bill of Attainder')).
+unauthorized(state, enter('ex post facto Law')).
+unauthorized(state, enter('Law impairing the Obligation of Contracts')).
+unauthorized(state, enter('grant any Title of Nobility')).
 
 
-noStateShall(withoutConsentOfCongress,'lay any Imposts or Duties on Imports or Exports, except what may be absolutely necessary for executing it’s inspection Laws: and the net Produce of all Duties and Imposts, laid by any State on Imports or Exports, shall be for the Use of the Treasury of the United States; and all such Laws shall be subject to the Revision and Controul of the Congress').
-noStateShall(withoutConsentOfCongress,'lay any Duty of Tonnage').
-noStateShall(withoutConsentOfCongress,'keep Troops, or Ships of War in time of Peace').
-noStateShall(withoutConsentOfCongress,'enter into any Agreement or Compact with another State').
-noStateShall(withoutConsentOfCongress,'enter into any Agreement or Compact with a foreign Power').
-noStateShall(withoutConsentOfCongress,'engage in War, unless actually invaded or  in such imminent Danger as will not admit of delay').
+% predicate to define what the state cannot do without the consent of the congress . 
+%-------------------------------------------------------------------------------
+
+unauthorized(state,withoutCongressConsent('lay any Imposts or Duties on Imports or Exports, except what may be absolutely necessary for executing it’s inspection Laws: and the net Produce of all Duties and Imposts, laid by any State on Imports or Exports, shall be for the Use of the Treasury of the United States; and all such Laws shall be subject to the Revision and Controul of the Congress')).
+unauthorized(state,withoutCongressConsent('lay any Duty of Tonnage')).
+unauthorized(state,withoutCongressConsent('keep Troops, or Ships of War in time of Peace')).
+unauthorized(state,withoutCongressConsent('enter into any Agreement or Compact with another State')).
+unauthorized(state,withoutCongressConsent('enter into any Agreement or Compact with a foreign Power')).
+unauthorized(state,withoutCongressConsent('engage in War, unless actually invaded or  in such imminent Danger as will not admit of delay')).
 
 
 % age(rohan, 23).
