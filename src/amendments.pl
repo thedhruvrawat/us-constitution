@@ -75,6 +75,10 @@ amendment10 :-
     write('The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.').
 rights(X, havePowers(notInConstitution)).
 
+% ammendment 11
+%judicial power of US is applicable only for us Citizens
+judicialPowerOfUS(X):- isUSCitizen(X).
+
 % Amendment 12 and Section 3 of Amendment 20
 procedureForRatificationOfPresidentAndVicePresident() :-
     write('The Electors shall meet in their respective states, and vote by ballot for President and Vice-President, one of whom, at least, shall not be an inhabitant of the same state with themselves; they shall name in their ballots the person voted for as President, and in distinct ballots the person voted for as Vice-President, and they shall make distinct lists of all persons voted for as President, and of all persons voted for as Vice-President, and of the number of votes for each, which lists they shall sign and certify, and transmit sealed to the seat of the government of the United States, directed to the President of the Senate;-the President of the Senate shall, in the presence of the Senate and House of Representatives, open all the certificates and the votes shall then be counted;-The person having the greatest number of votes for President, shall be the President, if such number be a majority of the whole number of Electors appointed; and if no person have such majority, then from the persons having the highest numbers not exceeding three on the list of those voted for as President, the House of Representatives shall choose immediately, by ballot, the President. But in choosing the President, the votes shall be taken by states, the representation from each state having one vote; a quorum for this purpose shall consist of a member or members from two-thirds of the states, and a majority of all the states shall be necessary to a choice.If, at the time fixed for the beginning of the term of the President, the President elect shall have died, the Vice President elect shall become President. If a President shall not have been chosen before the time fixed for the beginning of his term, or if the President elect shall have failed to qualify, then the Vice President elect shall act as President until a President shall have qualified; and the Congress may by law provide for the case wherein neither a President elect nor a Vice President shall have qualified, declaring who shall then act as President, or the manner in which one who is to act shall be selected, and such person shall act accordingly until a President or Vice President shall have qualified. The person having the greatest number of votes as Vice-President, shall be the Vice-President, if such number be a majority of the whole number of Electors appointed, and if no person have a majority, then from the two highest numbers on the list, the Senate shall choose the Vice-President; a quorum for the purpose shall consist of two-thirds of the whole number of Senators, and a majority of the whole number shall be necessary to a choice. But no person constitutionally ineligible to the office of President shall be eligible to that of Vice-President of the United States.').
@@ -118,6 +122,13 @@ power(congress,'enforce article 4 by appropriate legislation').
     powerToImpose(congress):-
         write('The Congress shall have the power to enforce, by appropri- ate legislation, the provisions of this article'). 
 
+% Amendment 15
+   %section 1
+     rightToVote:-
+         write('The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude. ').
+    
+    %section 2
+    power(congress,'enforce ammendment XV by apporpriate legislation').
 
 % Amendment 16 
     % Section 9 of article 1 was modified by the 16th amendment
@@ -136,7 +147,23 @@ power(congress,'enforce article 4 by appropriate legislation').
         write('When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies.\n') , 
         write('This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution. \n').
 
+%   %Amendment 18 later repealed by section 1 of amendment 21
+% % Amendment 18
+%      %
+%      prohibition(liquor) :-
+%         write('After one year from the ratifi cation of this article the
+%             manufacture, sale, or transportation of intoxicating liquors
+%             within, the importation thereof into, or the exportation
+%             thereof from the United States and all territory subject to
+%             the jurisdiction thereof for beverage purposes is hereby
+%             prohibited. ').
+     
 
+
+
+
+%Amendment 19 
+   rightToVote :- write('The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex. ').
 
 
 % Amendment 20
@@ -169,21 +196,6 @@ power(congress,'enforce article 4 by appropriate legislation').
             write('This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the leg- islatures of three-fourths of the several States within seven years from the date of its submission').
 
 
-% Amendment 25
-% Section 1
-vacancyInOffice(president) :-
-    write('The Vice President shall become President').
-% Section 2
-vacancyInOffice(vice_president) :-
-    write('The President shall nominate a Vice President who shall take offi ce upon confi rmation by a majority vote of both Houses of Congress').
-% Section 3
-unableToDischargeDuties(president,president) :-
-    write('Until the President transmits a written declaration to the contrary, such powers and duties shall be discharged by the Vice President as Acting President').
-% Section 4
-unableToDischargeDuties(president,vice_president) :-
-    write('The Vice President shall immediately assume the powers and duties of the office as Acting President.Thereafter, when the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that no inability exists, he shall resume the powers and duties of his offi ce unless the Vice President and a majority of either the principal officers of the executive department or of such other body as Congress may by law provide, transmit within four days to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his offi ce. Thereupon Congress shall decide the issue, assembling within forty-eight hours for that purpose if not in session. If the Congress, within twenty-one days after receipt of the latter written declaration, or, if Congress is not in session, within twenty-one days after Congress is required to assemble, determines by two-thirds vote of both Houses that the President is unable to discharge the powers and duties of his office, the Vice President shall continue to discharge the same as Acting President; otherwise, the President shall resume the powers and duties of his office').
-
-
 % Amendment 21
 
 % section1 
@@ -197,6 +209,10 @@ prohibited():-
 % section3
     % since its already an amendment so its not operative
 
+% Amendment 22 
+   termOfPresident :- 
+        write('No person shall be elected to the offi ce of the President more than twice, and no person who has held the office of President, or acted as President, for more than two years of
+            a term to which some other person was elected President shall be elected to the offi ce of President more than once').
 
 % Amendment 23  
 
@@ -211,7 +227,20 @@ prohibited():-
     % section2 
         % power(congress , 'The Congress shall have power to enforce this article by appropriate legislation.')
 
+% Amendment 25
 
+% Section 1
+vacancyInOffice(president) :-
+    write('The Vice President shall become President').
+% Section 2
+vacancyInOffice(vice_president) :-
+    write('The President shall nominate a Vice President who shall take offi ce upon confi rmation by a majority vote of both Houses of Congress').
+% Section 3
+unableToDischargeDuties(president,president) :-
+    write('Until the President transmits a written declaration to the contrary, such powers and duties shall be discharged by the Vice President as Acting President').
+% Section 4
+unableToDischargeDuties(president,vice_president) :-
+    write('The Vice President shall immediately assume the powers and duties of the office as Acting President.Thereafter, when the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that no inability exists, he shall resume the powers and duties of his offi ce unless the Vice President and a majority of either the principal officers of the executive department or of such other body as Congress may by law provide, transmit within four days to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his offi ce. Thereupon Congress shall decide the issue, assembling within forty-eight hours for that purpose if not in session. If the Congress, within twenty-one days after receipt of the latter written declaration, or, if Congress is not in session, within twenty-one days after Congress is required to assemble, determines by two-thirds vote of both Houses that the President is unable to discharge the powers and duties of his office, the Vice President shall continue to discharge the same as Acting President; otherwise, the President shall resume the powers and duties of his office').
 
 % Amendment 26
 
