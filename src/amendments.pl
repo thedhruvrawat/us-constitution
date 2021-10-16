@@ -77,7 +77,9 @@ rights(X, havePowers(notInConstitution)).
 
 % ammendment 11
 %judicial power of US is applicable only for us Citizens
-judicialPowerOfUS(X):- isUSCitizen(X).
+judicialPowerOfUS(X):- citizen(X,_).
+
+
 
 % Amendment 12 and Section 3 of Amendment 20
 procedureForRatificationOfPresidentAndVicePresident() :-
@@ -85,50 +87,60 @@ procedureForRatificationOfPresidentAndVicePresident() :-
 
 % Amendment 13
 % Section 1
-existenceOfSlavery :-
-    write('Neither slavery nor involuntary servitude, except as a punishment for crime whereof the party shall have been duly convicted, shall exist within the United States, or any place subject to their jurisdiction. ').
+ 
+ slavery(existence,onlyAs(punishmentFor(crime))).
+
+
 % Section 2
-power(congress,'enforce article 4 by appropriate legislation').
+power(congress,enforce(amendment13(byAppropriateLegislation))).
 
 % Amendment 14 
 
     % section1 of the 14th amendment
 
-    personBornInUS(person):-
-        write('All persons born or naturalized in the United States and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside').
+     isUsCitizen(X):-bornInUS(X);naturalized(X).
 
-    noStateShallBring(law):-
-        write('which abridges the priviledges , immunities of US citizens , also it shall not deprive any citizen from life , liberty and property\n').
+    % noStateShallBring(law):-
+    %     write('which abridges the priviledges , immunities of US citizens , also it shall not deprive any citizen from life , liberty and property\n').
+
+    right(life,shallNotBeDeprived).
+    right(liberty,shallNotBeDeprived).
+    right(property,shallNotBeDeprived).
 
 
     % section2 of the 14th amendment
 
-    divisionOfRepresentatives() :- 
-        write('proportinal to the population of the state excluding Indians not taxed'). 
+    % divisionOfRepresentatives() :- 
+    %     write('proportinal to the population of the state excluding Indians not taxed'). 
+    noOfRepresentatives(state,proportinalto(population(state))).
 
     % section 3 of the 14th amendment
-       enagedInInsurrectionAgainstUS:-
-         write('Cannot be e a Senator or Representative in Congress, or elector of President and Vice President, or hold any offi ce, civil or military, under the United States, or under any State').
+    %    enagedInInsurrectionAgainstUS:-
+    %      write('Cannot be e a Senator or Representative in Congress, or elector of President and Vice President, or hold any offi ce, civil or military, under the United States, or under any State').
+    insurrection(againstUS,cannot(hold(publicOffice))).
 
     % section 4 of the 14th amendment
-       validityOfPublicDebt:-
-           write('The validity of the public debt of the United States, authorized by law, including debts incurred for payment of pensions and bounties for services in suppressing insurrection or rebellion, shall not be questioned').
+    %    validityOfPublicDebt:-
+    %        write('The validity of the public debt of the United States, authorized by law, including debts incurred for payment of pensions and bounties for services in suppressing insurrection or rebellion, shall not be questioned').
 
-        publicDebtIsInvalid:-
-            write('neither the United States nor any State shall assume or pay any debt or obligation incurred in aid of insurrection or rebellion against the United States, or any claim for the loss or emancipation of any slave').
+   publicDebt(invalid,incurred(inAid(insurrection))).
+        % publicDebtIsInvalid:-
+        %     write('neither the United States nor any State shall assume or pay any debt or obligation incurred in aid of insurrection or rebellion against the United States, or any claim for the loss or emancipation of any slave').
 
     % section5 of the 14th amendment
     
-    powerToImpose(congress):-
-        write('The Congress shall have the power to enforce, by appropri- ate legislation, the provisions of this article'). 
+    % powerToImpose(congress):-
+    %     write('The Congress shall have the power to enforce, by appropri- ate legislation, the provisions of this article'). 
+    power(congress,enforece(ammendement14(byAppropriateLegislation))).
 
 % Amendment 15
    %section 1
-     rightToVote:-
-         write('The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude. ').
-    
+    %  rightToVote:-
+    %      write('The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude. ').
+    right(vote,shallNotBeDenied(onBasisOf(raceOrColorOrStatusOfServitude))).
+
     %section 2
-    power(congress,'enforce ammendment XV by apporpriate legislation').
+    power(congress,enforce(ammendement15(byAppropriateLegislation))).
 
 % Amendment 16 
     % Section 9 of article 1 was modified by the 16th amendment
@@ -147,6 +159,7 @@ power(congress,'enforce article 4 by appropriate legislation').
         write('When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies.\n') , 
         write('This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution. \n').
 
+
 %   %Amendment 18 later repealed by section 1 of amendment 21
 % % Amendment 18
 %      %
@@ -163,8 +176,8 @@ power(congress,'enforce article 4 by appropriate legislation').
 
 
 %Amendment 19 
-   rightToVote :- write('The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex. ').
-
+%    rightToVote :- write('The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex. ').
+  right(vote,shallNotBeDenied(onBasisOfGender)).
 
 % Amendment 20
 
@@ -195,40 +208,12 @@ power(congress,'enforce article 4 by appropriate legislation').
         operations(article):-
             write('This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the leg- islatures of three-fourths of the several States within seven years from the date of its submission').
 
-
-% Amendment 21
-
-% section1 
-
-% section2 
-
-prohibited():-
-    write('The transportation or importation into any State, Territory, or possession of the United States for delivery or use therein of intoxicating liquors, in violation of the laws thereof, is hereby prohibited') . 
-
-
-% section3
-    % since its already an amendment so its not operative
-
 % Amendment 22 
    termOfPresident :- 
         write('No person shall be elected to the offi ce of the President more than twice, and no person who has held the office of President, or acted as President, for more than two years of
             a term to which some other person was elected President shall be elected to the offi ce of President more than once').
 
-% Amendment 23  
-
-    % on hold
-
-% Amendment 24 
-    
-    % section1
-    rightToVote():-
-        write('Citizens should not be debarred from right to vote in primary or other election for President or Vice President, for electors for President or Vice President, or for Senator or Representative in Congress').
-
-    % section2 
-        % power(congress , 'The Congress shall have power to enforce this article by appropriate legislation.')
-
 % Amendment 25
-
 % Section 1
 vacancyInOffice(president) :-
     write('The Vice President shall become President').
@@ -241,21 +226,3 @@ unableToDischargeDuties(president,president) :-
 % Section 4
 unableToDischargeDuties(president,vice_president) :-
     write('The Vice President shall immediately assume the powers and duties of the office as Acting President.Thereafter, when the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that no inability exists, he shall resume the powers and duties of his offi ce unless the Vice President and a majority of either the principal officers of the executive department or of such other body as Congress may by law provide, transmit within four days to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his offi ce. Thereupon Congress shall decide the issue, assembling within forty-eight hours for that purpose if not in session. If the Congress, within twenty-one days after receipt of the latter written declaration, or, if Congress is not in session, within twenty-one days after Congress is required to assemble, determines by two-thirds vote of both Houses that the President is unable to discharge the powers and duties of his office, the Vice President shall continue to discharge the same as Acting President; otherwise, the President shall resume the powers and duties of his office').
-
-% Amendment 26
-
-    % section1 
-    rightToVote():-
-        write('those who are above 18 years of age have right to vote'). 
-    
-    % section2 
-    % power(congress , 'The Congress shall have power to enforce right to vote article by appropriate legislation.') .
-
-
-
-% Amendment 27
-
-    compensationForServices():-
-        write('No law, varying the compensation for the services of the Senators and Representatives, shall take effect, until an election of representatives shall have intervened').
-
- 
