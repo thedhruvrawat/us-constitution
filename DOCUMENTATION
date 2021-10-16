@@ -1,0 +1,53 @@
+CS-F214 Assignment 2021-22
+Take-Home [Prolog]
+
+-Problem 1:
+	Create a well-commented knowledge base in Prolog for the given US Constitution document.
+	The document consists of information about different bodies of the US government. Loading
+	the knowledge base should be able to perform queries for the structure of the government,
+	the power of different bodies of government, the various criteria for candidates to be 			
+	eligible for a position, etc. as given in the document.
+
+Authors
+2019B3A70537P - Dhruv Rawat
+2019B2A70995P - Hritik Raj Gupta
+2019B4A70572P - Rajan Sahu
+2020A7PS1675P - Bhanupratap Rathore
+2020A7PS0297P - Sarang Sridhar
+
+
+-Predicates
+	-qualified/2
+	 checks whether a person is qualified for an election/appointment.
+	
+	-power/2
+	 the powers of the body/person. (person/body in first and powers in second argument)
+ 
+	-executivePower/1
+         whether the body has been vested executive power.
+
+	-right/2
+	 what are the rights of a citizen.
+
+	-protectionAgainstInvasion/1
+	 checks whether the United States is liable to protect the region
+   
+	-meetingOfCongress/3
+	 Arguments: Dates for when the congress should assemble
+
+
+-Helper Predicates
+        %Article-1
+        
+	-legislativePower/1 (Predicates to check if a body has legislative power vested with it)
+	-partOfCongress/1 (Defines Parts of US Congress)
+	-numOfRepresentatives/2 (States and the corresponding number of representatives)
+	-speaker/1 (Check if a member is Speaker of the House)
+	-memberOfHouse/1 (Check if a person is a member of the House of Representatives)
+	-elected/1 (Check if a person has been elected to the House)
+	-numOfSenators/2 (Number of senators from each state)
+	-presidentOfSenate/1
+	-holdElectionEvents/2
+	-monday/3 check whether a date is monday or not
+	-
+	
