@@ -13,20 +13,21 @@ inferiorCourt(X):- ordain(congress,X),    %inferior courts/lower federal courts 
                    establish(congress,X). %established by congress.
 
 
-supremeCourt('SCJUS'). %Supreme Court of Justice, United States.
+% supremeCourt('SCJUS'). %Supreme Court of Justice, United States.
 
-ordain(congress,'FC1'). %Federal Court 1.
-establish(congress,'FC1').
+% ordain(congress,'FC1'). %Federal Court 1.
+% establish(congress,'FC1').
 
+right(judge, compensation).
 
-judgeOf(X,Y):- judge(X,Y),goodBehaviour(X),supremeCourt(Y);
-               judge(X,Y),goodBehaviour(X),inferiorCourt(Y).
+% judgeOf(X,Y):- judge(X,Y),goodBehaviour(X),supremeCourt(Y);
+%                judge(X,Y),goodBehaviour(X),inferiorCourt(Y).
 
-judge(ron,'FC1').
-judge(harry,'FC1').
-judge(hermione,'SCJUS').
-goodBehaviour(ron).
-goodBehaviour(hermione).
+% judge(ron,'FC1').
+% judge(harry,'FC1').
+% judge(hermione,'SCJUS').
+% goodBehaviour(ron).
+% goodBehaviour(hermione).
 
 
 % Section 2

@@ -125,9 +125,9 @@ noTreason(ron).
 noFeloncyAndBreachOfPeace(ron).
 
 % the limitations to the power of the senator has been described in the following lines . 
-powersProscribed(senator , 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
-powersProscribed(senator , 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
-powersProscribed(senator , 'not be a Member of either House during his Continuance in Office').
+powersProscribed(senator, 'during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created').
+powersProscribed(senator, 'during the Time for which he was elected, the Emoluments whereof shall have been encreased during such time').
+powersProscribed(senator, 'not be a Member of either House during his Continuance in Office').
 
 
 
