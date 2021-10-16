@@ -1,3 +1,5 @@
+introduction :-
+write('We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America').
 %**************************************************************************
 % ARTICLE 1
 %**************************************************************************
@@ -29,8 +31,8 @@ numOfRepresentatives(newHampshire, 3).
 numOfRepresentatives(massachusetts, 8).
 numOfRepresentatives(rhodeIsland, 1).
 numOfRepresentatives(connecticut, 5).
-numOfRepresentatives(new York, 6).
-numOfRepresentatives(new Jersey, 4).
+numOfRepresentatives(newYork, 6).
+numOfRepresentatives(newJersey, 4).
 numOfRepresentatives(pennsylvania, 8).
 numOfRepresentatives(delaware, 1).
 numOfRepresentatives(maryland, 6).
@@ -40,13 +42,12 @@ numOfRepresentatives(southCarolina, 5).
 numOfRepresentatives(georgia, 3).
 
 % Predicate to check if X has power to fill house vacancy    
-powerToFillHouseVacancy(X) :-
-    write('[Article 1, Section 2] Vacancy filled through Writs of Election by Executive Authority.'),
-    isExecutive(X).
+power(executiveAuthority,fill(houseVacancies)).
 
 % Predicate to check if X has power to impeach 
-powerOfImpeachment(X) :-
-    speaker(X).
+power(houseOfRepresentatives,choose(speaker)).
+power(houseOfRepresentatives,choose(officers)).
+power(houseOfRepresentatives,impeachment).
 
 % Predicate to check if X is Speaker of the House
 speaker(X) :-
@@ -65,7 +66,7 @@ elected(X) :-
 %--------------------------------------------------------------------------
 % Number of senators from each state
 
-% numOfSenators(X, Y) :- Y=2.
+numOfSenators(X, Y) :- numOfRepresentatives(X,_),Y=2.
 
 classesOfSenators :- 
     write('Senators shall be divided as equally as may be into three Classes\n'),
@@ -75,18 +76,18 @@ qualified(X,senate) :-
     age(X,Age),
     citizen(X,YearsAsCitizen),
     Age >= 30,
-    YearsAsCitizen >= 9.
+    YearsAsCitizen >= 9,
+    inhabitant(X,Y).
 
 presidentOfSenate(X):-
     isVP(X);
     isProTemporePrez(X).
 
-presidentOfSenate('Vice President').
+presidentOfSenate(vicePresident).
 
-impeachmentTrialPower(senate).
+power(senate,try(for(impeachment))).
 
-impeachPresidentPower(X):-
-    chiefJustice(X).
+presideOverImpeachementTrial(chiefJustice).
 
 impeachmentJudgement :-
     write('Judgment in Cases of Impeachment shall not extend further than to removal from Office, and disqualification to hold and enjoy any Office of honor, Trust or Profit under the United States: but the Party convicted shall nevertheless be liable and subject to Indictment, Trial, Judgment and Punishment, according to Law.').
