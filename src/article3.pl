@@ -57,7 +57,7 @@ stateOfUS(southCarolina).
 stateOfUS(georgia).
 
 scOriginalJur(X,P):- case(X),stateOfUS(Y),member(Y,P). %P is the list of parties involved in the case.
-scAppelateJur(X,P):- case(X),stateofUS(Y),not(member(Y,P)).
+scAppelateJur(X,P):- case(X),stateOfUS(Y),not(member(Y,P)).
 
 
 % Section 3
