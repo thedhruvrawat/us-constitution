@@ -7,12 +7,12 @@
 
 % Predicate to check is a body has legislative power vested with it.
 legislativePower(X):-
-    write('Checking legislative powers through Article 1 Section 1......'),
+    % write('Checking legislative powers through Article 1 Section 1......'),
     partOfCongress(X).
 
 % Defines parts of US Congress
 partOfCongress(senate).
-partOfCongress('house of representatives').
+partOfCongress(houseOfRepresentatives).
 
 % Section 2
 %--------------------------------------------------------------------------
@@ -301,13 +301,13 @@ unauthorized(state,withoutCongressConsent('enter into any Agreement or Compact w
 unauthorized(state,withoutCongressConsent('engage in War, unless actually invaded or  in such imminent Danger as will not admit of delay')).
 
 
-% age(rohan, 23).
-% citizen(rohan, 23).
-% age(meera, 30).
-% citizen(meera, 8).
-% age(david, 35).
-% citizen(david, 35).
-% age(leonard, 40).
-% citizen(leonard, 40).
-% age(amy, 38).
-% citizen(amy, 5).
+age(rohan, 23).
+citizen(rohan, 23).
+age(meera, 30).
+citizen(meera, 8).
+age(david, 35).
+citizen(david, 35).
+age(leonard, 40).
+citizen(leonard, 40).
+age(amy, 38).
+citizen(amy, 5).
