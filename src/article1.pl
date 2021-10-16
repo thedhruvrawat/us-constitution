@@ -40,6 +40,7 @@ numOfRepresentatives(virginia, 10).
 numOfRepresentatives(northCarolina, 5).
 numOfRepresentatives(southCarolina, 5).
 numOfRepresentatives(georgia, 3).
+stateOfUS(X):- numOfRepresentatives(X,_).
 
 % Predicate to check if X has power to fill house vacancy    
 power(executiveAuthority,fill(houseVacancies)).
