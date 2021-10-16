@@ -86,6 +86,83 @@ existenceOfSlavery :-
 % Section 2
 power(congress,'enforce article 4 by appropriate legislation').
 
+% Amendment 14 
+
+    % section1 of the 14th amendment
+
+    personBornInUS(person):-
+        write('All persons born or naturalized in the United States and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside').
+
+    noStateShallBring(law):-
+        write('which abridges the priviledges , immunities of US citizens , also it shall not deprive any citizen from life , liberty and property\n').
+
+
+    % section2 of the 14th amendment
+
+    divisionOfRepresentatives() :- 
+        write('proportinal to the population of the state excluding Indians not taxed'). 
+
+    
+    % section5 of the 14th amendment
+    
+    powerToImpose(congress):-
+        write('The Congress shall have the power to enforce, by appropri- ate legislation, the provisions of this article'). 
+
+
+% Amendment 16 
+    % Section 9 of article 1 was modified by the 16th amendment
+
+    % describes the power to the congress to lay and collect taxes
+    monetaryPower(congress):-
+        write('The Congress shall have power to lay and collect taxes on incomes, from whatever source derived, without apportionment among the several States, and without regard to any census or enumeration').
+    
+
+
+
+% Amendment 17
+    % Section 3 of article 1 was modified by the 17th amendment
+    compositionOfTheSenate(senator):-
+        write('The Senate of the United States shall be composed of two Senators from each State. \n') , 
+        write('Senators shall be elected by the people thereof, for six years; and each Senator shall have one vote. \n') , 
+        write('The electors in each State shall have the qualifications requisite for elec- tors of the most numerous branch of the State legislatures. \n').
+
+    vacancyInSenate(state) :-
+        write('When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies.\n') , 
+        write('This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution. \n')
+
+
+
+
+% Amendment 20
+
+        % section 1
+            termEnd(presidentAndVicePresident):-
+                write('The terms of the President and the Vice President shall end at noon on the 20th day of January of the years in which such terms would have ended').
+
+            termEnd(senatorAndRepresentative):-
+                write(' the terms of Sena- tors and Representatives at noon on the 3d day of January of the years in which such terms would have ended').
+
+            sideNote(articleNotEnded):-
+                write(' if this article had not been ratified; and the terms of their succes- sors shall then begin.').
+
+
+        % section 2
+        assemble(congress):-
+            write('The Congress shall assemble at least once in every year, and such meeting shall begin at noon on the 3d day of January, unless they shall by law appoint a different day').
+
+        % section 4 
+        
+        lawForDeathOfAnyMember(congress):-
+            write('') . 
+
+
+        % section 5
+        ratification(section1And2):-
+            write('Sections 1 and 2 shall take effect on the 15th day of Octo- ber following the ratification of this article').
+        %section 6
+        operations(article):-
+            write('This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the leg- islatures of three-fourths of the several States within seven years from the date of its submission').
+
 
 % Amendment 25
 % Section 1
