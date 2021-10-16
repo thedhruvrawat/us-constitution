@@ -123,12 +123,8 @@ power(congress,'enforce article 4 by appropriate legislation').
     % Section 9 of article 1 was modified by the 16th amendment
 
     % describes the power to the congress to lay and collect taxes
-    monetaryPower(congress):-
-        write('The Congress shall have power to lay and collect taxes on incomes, from whatever source derived, without apportionment among the several States, and without regard to any census or enumeration').
+    power(congress,'The Congress shall have power to lay and collect taxes on incomes, from whatever source derived, without apportionment among the several States, and without regard to any census or enumeration' ) .
     
-
-
-
 % Amendment 17
     % Section 3 of article 1 was modified by the 17th amendment
     compositionOfTheSenate(senator):-
@@ -162,8 +158,7 @@ power(congress,'enforce article 4 by appropriate legislation').
 
         % section 4 
         
-        lawForDeathOfAnyMember(congress):-
-            write('') . 
+        power(congress , 'in case of death choose president or vice president whenever right of choice shall have devlove upon the respective house') . 
 
 
         % section 5
