@@ -102,7 +102,17 @@ power(congress,'enforce article 4 by appropriate legislation').
     divisionOfRepresentatives() :- 
         write('proportinal to the population of the state excluding Indians not taxed'). 
 
-    
+    % section 3 of the 14th amendment
+       enagedInInsurrectionAgainstUS:-
+         write('Cannot be e a Senator or Representative in Congress, or elector of President and Vice President, or hold any offi ce, civil or military, under the United States, or under any State').
+
+    % section 4 of the 14th amendment
+       validityOfPublicDebt:-
+           write('The validity of the public debt of the United States, authorized by law, including debts incurred for payment of pensions and bounties for services in suppressing insurrection or rebellion, shall not be questioned').
+
+        publicDebtIsInvalid:-
+            write('neither the United States nor any State shall assume or pay any debt or obligation incurred in aid of insurrection or rebellion against the United States, or any claim for the loss or emancipation of any slave').
+
     % section5 of the 14th amendment
     
     powerToImpose(congress):-
@@ -128,7 +138,7 @@ power(congress,'enforce article 4 by appropriate legislation').
 
     vacancyInSenate(state) :-
         write('When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies.\n') , 
-        write('This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution. \n')
+        write('This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution. \n').
 
 
 
