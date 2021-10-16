@@ -42,22 +42,22 @@ case('A&MJ'). %Admiralty and Marital Jurisdiction.
 case('D&C').  %Disputes, Conflicts and Controversies.
 
 
-state('New Hampshire').
-state('Massachusetts').
-state('Rhose Island and Providence Plantations').
-state('Connecticut').
-state('New York').
-state('New Jersey').
-state('Pennsylvania').
-state('Delaware').
-state('Maryland').
-state('Virginia').
-state('North Carolina').
-state('South Carolina').
-state('Georgia').
+stateOfUS(newHampshire).
+stateOfUS(massachusetts).
+stateOfUS(rhodeIsland).
+stateOfUS(connecticut).
+stateOfUS(newYork).
+stateOfUS(newJersey).
+stateOfUS(pennsylvania).
+stateOfUS(delaware).
+stateOfUS(maryland).
+stateOfUS(virginia).
+stateOfUS(northCarolina).
+stateOfUS(southCarolina).
+stateOfUS(georgia).
 
-scOriginalJur(X,P):- case(X),state(Y),member(Y,P). %P is the list of parties involved in the case.
-scAppelateJur(X,P):- case(X),state(Y),not(member(Y,P)).
+scOriginalJur(X,P):- case(X),stateOfUS(Y),member(Y,P). %P is the list of parties involved in the case.
+scAppelateJur(X,P):- case(X),stateOfUS(Y),not(member(Y,P)).
 
 
 % Section 3
