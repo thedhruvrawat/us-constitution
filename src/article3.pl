@@ -37,10 +37,10 @@ right(judge, compensation).
 
 extendPower(X):-case(X).
 
-case('L&E (Except in case when a citizen of one state is prosecuted by other State of United States or of a foreign state.').  %law and equality.The line in brackets was added by the 11th amendemnt
-case('AP&C'). %Ambassadors,Public Ministers and Consuls.
-case('A&MJ'). %Admiralty and Marital Jurisdiction.
-case('D&C').  %Disputes, Conflicts and Controversies.
+case(lawAndEquality). %law and equality.The line in brackets was added by the 11th amendemnt
+case(ambassadorsPublicMinistersAndConsuls). %Ambassadors,Public Ministers and Consuls.
+case(admiraltyAndMaritalJurisdiction). %Admiralty and Marital Jurisdiction.
+case(disputesConflictsAndControversies).  %Disputes, Conflicts and Controversies.
 
 
 stateOfUS(newHampshire).
@@ -57,17 +57,17 @@ stateOfUS(northCarolina).
 stateOfUS(southCarolina).
 stateOfUS(georgia).
 
-scOriginalJur(X,P):- case(X),stateOfUS(Y),member(Y,P). %P is the list of parties involved in the case.
-scAppelateJur(X,P):- case(X),stateOfUS(Y),not(member(Y,P)).
+supremeCourtOriginalJur(X,P):- case(X),stateOfUS(Y),member(Y,P). %P is the list of parties involved in the case.
+supremeCourtAppelateJur(X,P):- case(X),stateOfUS(Y),not(member(Y,P)).
 
 
 % Section 3
 %--------------------------------------------------------------------------
 %
-tcase('WARuS'). %levying war against US
-tcase('ENEuS'). %adhering to enemies of US
+treasonCase(warAgainstUS). %levying war against US
+treasonCase(enemiesOfUS). %adhering to enemies of US
 
-treason(X):- tcase(X).
+treason(X):- treasonCase(X).
 
 treasonConvict(P,X):- witness(P,X)>= 2, treason(X); %witness >= 2 and crime should be treason
                     confess(P,X),treason(X).
