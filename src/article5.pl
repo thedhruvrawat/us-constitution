@@ -1,6 +1,6 @@
 
-power(congress,'Propose ammendments to the constituion when two thirds of both houses approve').
-power(congress,'Call convention for proposing ammendments on appliccation of two thirds of all states').
+power(congress,proposeAmmendments(X)).
+power(congress,callConventionForAmmendments(X)).
 
 proposeAmmendments(X):- twoThirdsOfBothHousesAgree(X).
 callConventionForAmmendments(X):-onApplicationOfTwoThirdsOfAllStates(X).
