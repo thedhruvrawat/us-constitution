@@ -25,19 +25,19 @@ qualified(X,houseOfRepresentatives) :-
     YearsAsCitizen >= 7.
 
 % Number of representatives initially detailed in the article
-numOfRepresentatives('New Hampshire', 3).
-numOfRepresentatives('Massachusetts', 8).
-numOfRepresentatives('Rhose Island and Providence Plantations', 1).
-numOfRepresentatives('Connecticut', 5).
-numOfRepresentatives('New York', 6).
-numOfRepresentatives('New Jersey', 4).
-numOfRepresentatives('Pennsylvania', 8).
-numOfRepresentatives('Delaware', 1).
-numOfRepresentatives('Maryland', 6).
-numOfRepresentatives('Virginia', 10).
-numOfRepresentatives('North Carolina', 5).
-numOfRepresentatives('South Carolina', 5).
-numOfRepresentatives('Georgia', 3).
+numOfRepresentatives(newHampshire, 3).
+numOfRepresentatives(massachusetts, 8).
+numOfRepresentatives(rhodeIsland, 1).
+numOfRepresentatives(connecticut, 5).
+numOfRepresentatives(new York, 6).
+numOfRepresentatives(new Jersey, 4).
+numOfRepresentatives(pennsylvania, 8).
+numOfRepresentatives(delaware, 1).
+numOfRepresentatives(maryland, 6).
+numOfRepresentatives(virginia, 10).
+numOfRepresentatives(northCarolina, 5).
+numOfRepresentatives(southCarolina, 5).
+numOfRepresentatives(georgia, 3).
 
 % Predicate to check if X has power to fill house vacancy    
 powerToFillHouseVacancy(X) :-
