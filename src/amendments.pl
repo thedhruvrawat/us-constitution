@@ -5,7 +5,7 @@
 preambleToBillOfRights :-
     write('CONGRESS OF THE UNITED STATES BEGUN AND HELD AT THE CITY OF NEW-YORK, ON WEDNESDAY THE FOURTH OF MARCH, ONE THOUSAND SEVEN HUNDRED AND EIGHTY NINE\n\n'),
     write('THE Conventions of a number of the States, having at the time of their adopting the Constitution, expressed a desire, in order to prevent misconstruction or abuse of its powers, that further declaratory and restrictive clauses should be added: And as extending the ground of public confidence in the Government, will best ensure the beneficent ends of its institution\n\n'),
-    write('RESOLVED by the Senate and House of Representatives of the United States of America, in Congress assembled, two thirds of both Houses concurring, that the following Articles be proposed to the  legislatures of the several States, as amendments to the Constitution of the United States, all, or any of which Articles, when ratified by three fourths of the said Legislatures, to be valid to all intents and purposes, as part of the said Constitution; viz.\n\n'),
+    write('RESOLVED by the Senate and House of Representatives of the United States of America, in Congress assembled, two thirds of both Houses concurring, that the following Articles be proposed to the  legislatures of the several States, as amendments to the Constitution of the United States, all, or any of which Articles, when ratifi ed by three fourths of the said Legislatures, to be valid to all intents and purposes, as part of the said Constitution; viz.\n\n'),
     write('ARTICLES in addition to, and Amendment of the Constitution of the United States of America, proposed by Congress, and ratifi ed by the Legislatures of the several States, pursuant to the fifth  Article of the original Constitution.').
 
 amendment1 :-
@@ -182,3 +182,51 @@ unableToDischargeDuties(president,president) :-
 % Section 4
 unableToDischargeDuties(president,vice_president) :-
     write('The Vice President shall immediately assume the powers and duties of the office as Acting President.Thereafter, when the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that no inability exists, he shall resume the powers and duties of his offi ce unless the Vice President and a majority of either the principal officers of the executive department or of such other body as Congress may by law provide, transmit within four days to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his offi ce. Thereupon Congress shall decide the issue, assembling within forty-eight hours for that purpose if not in session. If the Congress, within twenty-one days after receipt of the latter written declaration, or, if Congress is not in session, within twenty-one days after Congress is required to assemble, determines by two-thirds vote of both Houses that the President is unable to discharge the powers and duties of his office, the Vice President shall continue to discharge the same as Acting President; otherwise, the President shall resume the powers and duties of his office').
+
+
+% Amendment 21
+
+% section1 
+
+% section2 
+
+prohibited():-
+    write('The transportation or importation into any State, Territory, or possession of the United States for delivery or use therein of intoxicating liquors, in violation of the laws thereof, is hereby prohibited') . 
+
+
+% section3
+    % since its already an amendment so its not operative
+
+
+% Amendment 23  
+
+    % on hold
+
+% Amendment 24 
+    
+    % section1
+    rightToVote():-
+        write('Citizens should not be debarred from right to vote in primary or other election for President or Vice President, for electors for President or Vice President, or for Senator or Representative in Congress').
+
+    % section2 
+        % power(congress , 'The Congress shall have power to enforce this article by appropriate legislation.')
+
+
+
+% Amendment 26
+
+    % section1 
+    rightToVote():-
+        write('those who are above 18 years of age have right to vote'). 
+    
+    % section2 
+    % power(congress , 'The Congress shall have power to enforce right to vote article by appropriate legislation.') .
+
+
+
+% Amendment 27
+
+    compensationForServices():-
+        write('No law, varying the compensation for the services of the Senators and Representatives, shall take effect, until an election of representatives shall have intervened').
+
+ 
