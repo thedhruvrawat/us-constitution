@@ -11,7 +11,7 @@ signatories('North Carolina', 'Wm. Blount,Richd. Dobbs Spaight,Hu Williamson ').
 signatories('South Carolina', 'J. Rutledge,Charles Cotesworth Pinckney,Charles Pinckney,Pierce Butler ').
 signatories('Georgia', 'William Few,Abr Baldwin ').
 
-letterOfRatification:- write('In Convention Monday
+letterOfRatification :- write('In Convention Monday 
     September 17th, 1787.
     Present
     The States of
