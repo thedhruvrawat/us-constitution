@@ -780,7 +780,8 @@ maxNumOfTerms(president, 2).
 
 % Amendment 23
 %--------------------------------------------------------------------------
-% on hold
+power(congress , appointToSeat(districtConstituting(government))).
+grant(votingRight(citizenOf(district))).
 
 % Amendment 24
 %--------------------------------------------------------------------------
