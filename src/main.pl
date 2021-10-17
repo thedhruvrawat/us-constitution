@@ -142,6 +142,7 @@ monday(D,M,Y):- day_of_the_week(date(Y,M,D),1).
 % meetingOfCongress(D,M,Y):-
 %     write('The Congress shall assemble at least once in every Year, and such Meeting shall be on the first Monday in December'),
 %     M=12,
+%     D <= 7,
 %     monday(D,12,Y).
 
 % Section 5
