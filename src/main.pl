@@ -1,11 +1,3 @@
-/* 
-NAME: DHRUV RAWAT, ID: 2019B3A70537P
-NAME: HRITHIK RAJ GUPTA, ID: 2019B2A70995P
-NAME: RAJAN SAHU, ID: 2019B4A70572P
-NAME: BHANUPRATAP RATHORE, ID: 2020A7PS1675P
-NAME: SARANG SRIDHAR, ID: 2020A7PS0297P
-*/
-
 %----------- Facts copied for implementation of test cases-----------------
 age(rohan, 23).
 citizen(rohan, 23).
@@ -322,8 +314,6 @@ unauthorized(state,withoutCongressConsent('engage in War, unless actually invade
 executivePower(president).
 term(president,4).
 term(vicePresident,4).
-
-numOfRepresentatives(georgia, 3).
 
 electors(X, Y) :-
     numOfRepresentatives(X, K),
@@ -823,3 +813,5 @@ right(vote , X) :-
 
 noChangeInCompensation(senatorAndRepresentative(untilElection)).
 
+
+%END
